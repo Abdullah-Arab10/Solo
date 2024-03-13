@@ -1,0 +1,77 @@
+@import "../shared/styles/global";
+.contact {
+  @include flex-center;
+  .right {
+    width: 100%;
+  }
+  .left {
+    display: none;
+  }
+  @media screen and (min-width: 768px) {
+    .left {
+      display: block;
+
+      width: 50%;
+    }
+    .right {
+      width: 50%;
+    }
+    &__figures {
+      position: relative;
+      width: 130%;
+    }
+    #msg42 {
+      width: 35%;
+      @include position-absolute($bottom: 50%, $left: 0);
+    }
+    #msg43 {
+      width: 40%;
+      @include position-absolute($top: 10%, $right: 15%);
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .right {
+      max-width: 500px;
+    }
+    &__figures {
+      width: 130%;
+      margin-left: 0;
+    }
+  }
+  &__header {
+    text-align: center;
+  }
+  @media screen and (min-width: 768px) {
+    &__header {
+      text-align: left;
+    }
+  }
+  &__form {
+  }
+  &__field {
+    @include flex-column;
+    margin-block: 2rem;
+  }
+  &__label {
+    color: var(--main-text);
+    font-weight: 500;
+    margin-block: 1rem;
+  }
+  input,
+  textarea {
+    border: none;
+    border-radius: 16px;
+    padding: 1.5rem;
+    resize: none;
+    background-color: var(--card-background);
+    &::placeholder {
+      font-weight: 600;
+    }
+  }
+  &__buttons {
+    button {
+      width: 100%;
+    }
+  }
+}
+@import "../shared/styles/helpers/animations";

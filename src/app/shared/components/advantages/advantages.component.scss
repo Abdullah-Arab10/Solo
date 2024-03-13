@@ -1,0 +1,46 @@
+@import "../../styles/global";
+.advantages {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 100%;
+  text-align: left;
+  margin-block: 4rem;
+  &__advantage {
+    min-width: 250px;
+    @include flex-column;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    max-width: 210px;
+    padding-block: 1rem;
+  }
+  &__text {
+    max-width: 215px;
+    font-weight: 500;
+    margin-inline: 0;
+    color: var(--main-text);
+    padding-block: 1.5rem;
+    position: relative;
+  }
+  path {
+    stroke: var(--primary-text);
+  }
+  &__text::before {
+    content: "";
+    @include position-absolute($top: 0, $left: 0);
+
+    height: 4px;
+    background-color: rgba(116, 143, 181, 0.15);
+  }
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .advantages {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

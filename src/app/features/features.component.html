@@ -1,0 +1,175 @@
+<main class="main">
+  <section class="hero center">
+    <div class="hero__text">
+      <h1 class="main-typo">
+        <span> What makes Solo different? </span>
+      </h1>
+      <div class="main-text">
+        Organize your tasks, lists and reminders in one app.
+      </div>
+      <div class="hero__buttons">
+        <div class="hero__button">
+          <app-button title="Try it free" className="btn-primary"></app-button>
+        </div>
+        <div class="hero__button">
+          <app-button
+            title="Watch how it works"
+            className="btn-secondary"
+            icon="assets/icons/play.svg"
+          ></app-button>
+        </div>
+      </div>
+      <div class="hero__figures">
+        <img src="assets/images/feature-mobile.png" id="feature-mob" alt="" />
+
+        <img src="assets/images/features-fig.png" id="feature-fig" alt="" />
+      </div>
+    </div>
+  </section>
+  <section class="features center">
+    <div class="features__feature" *ngFor="let feature of features">
+      <div class="features__icon">
+        <svg-icon [src]="feature.icon"></svg-icon>
+      </div>
+      <div class="features__title">
+        {{ feature.title }}
+      </div>
+      <div class="features__description">
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </section>
+  <section class="options center">
+    <div class="options__text">
+      <div class="stage">INSTANT SETUP</div>
+      <h2 class="main-typo">
+        <span>Fast, simple & effortless.</span>
+      </h2>
+      <div class="options__cover">
+        <img src="assets/images/options.png" alt="" />
+      </div>
+    </div>
+    <div class="options__wrapper">
+      <app-advantages></app-advantages>
+    </div>
+  </section>
+  <section class="share center">
+    <div class="card card-dark share__wrapper">
+      <div class="share__background"></div>
+      <div class="share__item">
+        <div class="share__icon">
+          <img src="assets/images/chat.png" alt="" />
+        </div>
+        <h3 class="share__title light-text">
+          <span>Share files at the right time</span>
+        </h3>
+        <p class="share__description">
+          We're a growing family of 382,081 designers and makers from around the
+          world
+        </p>
+        <div class="share__buttons">
+          <app-button title="Sign up now" className="btn-tertiary"></app-button>
+        </div>
+      </div>
+      <div class="share__item">
+        <div class="share__icon">
+          <img src="assets/images/plane.png" alt="" />
+        </div>
+        <h3 class="share__title light-text">
+          <span>Collaborate from anywhere</span>
+        </h3>
+        <p class="share__description">
+          We're a growing family of 382,081 designers and makers from around the
+          world
+        </p>
+        <div class="share__buttons">
+          <app-button
+            title="Schedule a demo"
+            className="btn-tertiary"
+          ></app-button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="comments center">
+    <div class="comments__title">
+      <h2 class="main-typo">
+        <span>What people are saying</span>
+      </h2>
+    </div>
+    <div class="comments__items">
+      <div class="" *ngFor="let comment of comments; let i = index">
+        <div class="comments__item" *ngIf="i == activeComment">
+          <div class="comments__card card">
+            <div class="comments__text">{{ comment.comment }}</div>
+            <div class="comments__rating">
+              <img src="assets/images/stars.png" alt="" />
+            </div>
+          </div>
+          <div class="comments__authors">
+            <div class="comments__avatar">
+              <img [src]="comment.image" alt="" />
+            </div>
+            <div class="comments__author">
+              {{ comment.author }}
+            </div>
+            <div class="comments__date">
+              {{ comment.date }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comments__arrows">
+        <svg-icon
+          (click)="moveComment(-1)"
+          src="assets/icons/arrow-left.svg"
+        ></svg-icon>
+        <svg-icon
+          (click)="moveComment(1)"
+          src="assets/icons/arrow-right.svg"
+        ></svg-icon>
+      </div>
+      <div class="comments__icon">
+        <img src="assets/images/book.png" alt="" />
+      </div>
+    </div>
+  </section>
+  <section class="faqs center">
+    <div class="faqs__title">
+      <h2 class="main-typo">Frequently asked questions</h2>
+    </div>
+    <div class="faqs__items">
+      <div
+        class="faqs__faq"
+        *ngFor="let faq of faqs; let i = index"
+        (click)="toggleFAQ(i.toString())"
+        [id]="i"
+      >
+        <div class="faqs__question">
+          <span>{{ faq.question }}</span>
+          <span class="faqs__icon"
+            ><svg-icon src="assets/icons/show.svg"></svg-icon
+          ></span>
+        </div>
+        <div class="faqs__answer">
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="offer center">
+    <div class="card card-light offer__wrapper">
+      <div class="offer__title">
+        <h1 class="main-typo">
+          <span>Organize anything with anyone, anywhere.</span>
+        </h1>
+      </div>
+      <div class="offer__button">
+        <app-button title="Try it free" className="btn-primary"></app-button>
+      </div>
+    </div>
+    <div class="offer__figure">
+      <img src="assets/images/offer.png" alt="" />
+    </div>
+  </section>
+</main>

@@ -1,0 +1,35 @@
+<div class="reviews">
+  <div class="reviews__text">
+    <h2 class="reveal">
+      <span>What people are saying</span>
+    </h2>
+  </div>
+  <div class="reviews__items">
+    <div *ngFor="let item of reviews">
+      <div class="reviews__review" *ngIf="item.id == activeReview">
+        <p class="p-secondary">{{ item.review }}</p>
+        <div class="reviews__rating">
+          <img loading="lazy" src="assets/images/stars.png" alt="" />
+        </div>
+        <div class="reviews__name">{{ item.name }}</div>
+        <div class="reviews__via">{{ item.via }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="reviews__arrows">
+    <button (click)="moveReview(-1)">
+      <svg-icon
+        src="assets/icons/arrow-left.svg"
+        id="arrow-l"
+        alt=""
+      ></svg-icon>
+    </button>
+    <button (click)="moveReview(1)">
+      <svg-icon
+        src="assets/icons/arrow-right.svg"
+        id="arrow-r"
+        alt=""
+      ></svg-icon>
+    </button>
+  </div>
+</div>

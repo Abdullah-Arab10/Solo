@@ -1,0 +1,51 @@
+<div class="main about">
+  <section class="hero center">
+    <div class="hero__header">
+      <h1 class="main-typo">Organize your work in seconds</h1>
+    </div>
+    <div class="hero__figures">
+      <div class="hero__figure">
+        <img src="assets/images/about.png" alt="" />
+      </div>
+    </div>
+  </section>
+  <section class="who center">
+    <div class="who__header">
+      <div class="stage">MEET SOLO'S TEAM</div>
+      <h2 class="main-typo">Who we are?</h2>
+    </div>
+    <div class="who__items">
+      <div class="who__item" *ngFor="let item of teamDescription">
+        <div class="who__icon">
+          <svg-icon [src]="item.icon"></svg-icon>
+        </div>
+        <div class="who__description">
+          {{ item.description }}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="team center">
+    <div class="team__header">
+      <div class="team__icon">
+        <svg-icon src="assets/icons/heart.svg"></svg-icon>
+        <div>
+          <span>Meet the team</span>
+        </div>
+      </div>
+    </div>
+    <div class="team__employees">
+      <div class="team__employee" *ngFor="let employee of employees">
+        <div class="team__image">
+          <img [src]="employee.image" alt="" />
+        </div>
+        <div class="team__name">
+          {{ employee.name }}
+        </div>
+        <div class="team__position">
+          {{ employee.position }}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

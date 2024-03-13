@@ -1,0 +1,63 @@
+@import "colors";
+@import "text";
+@import "./helpers/mixins";
+$border: 3px solid rgba(116, 143, 181, 0.15);
+
+.center {
+  padding: 0 20px;
+  overflow: hidden;
+  margin-inline: auto;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .center {
+    padding: 0 32px;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  .center {
+    padding: 0 64px;
+    max-width: 1248px;
+  }
+}
+.container {
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 24px;
+  padding: 2.5rem 1rem;
+  overflow: hidden;
+  width: 100%;
+  z-index: 1;
+}
+.card-dark {
+  background-color: var(--card-background-dark);
+  // opacity: 0.6;
+}
+
+.card-light {
+  background: linear-gradient(90.33deg, #fea989 0.02%, #99b4db 98.92%);
+}
+.card-primary {
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.1);
+  background: var(--card-background);
+}
+@media screen and (min-width: 768px) {
+  .card {
+    padding: 40px 64px;
+  }
+}
+@media screen and (min-width: 1179px) {
+  .card {
+    padding: 40px 80px;
+  }
+}

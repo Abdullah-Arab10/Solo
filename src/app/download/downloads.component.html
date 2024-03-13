@@ -1,0 +1,50 @@
+<div class="downloads">
+  <section class="hero center">
+    <div class="hero__text">
+      <div class="stage">READY TO USE SOLO?</div>
+      <h1 class="main-typo reveal">
+        <span>Download Solo</span>
+      </h1>
+      <div class="hero__terms">
+        <p>
+          By downloading Solo, you accept <a href="#">Terms of Use</a> and
+          <a>Privacy & Cookies</a>
+        </p>
+      </div>
+      <div class="hero__buttons">
+        <div class="hero__button">
+          <app-button
+            title="Get Solo for Mac OS"
+            className="btn-primary"
+          ></app-button>
+        </div>
+      </div>
+      <div class="hero__figures">
+        <img src="assets/images/download.png" alt="" />
+      </div>
+    </div>
+  </section>
+  <section class="devices center">
+    <div class="devices__title">
+      <h2 class="">
+        <span>Looking for another device?</span>
+      </h2>
+    </div>
+    <div class="devices__list">
+      <div class="devices__device" *ngFor="let device of devices">
+        <div class="devices__icon">
+          <svg-icon [src]="device.icon"></svg-icon>
+        </div>
+        <div class="devices__category">
+          {{ device.title }}
+        </div>
+        <div class="devices__type">
+          {{ device.type }}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="reviews center">
+    <app-reviews></app-reviews>
+  </section>
+</div>

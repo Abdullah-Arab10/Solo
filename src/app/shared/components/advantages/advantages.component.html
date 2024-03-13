@@ -1,0 +1,17 @@
+<div class="advantages">
+  <div class="advantages__advantage" *ngFor="let advantage of advantages">
+    <div class="advatages__header">
+      <div class="advantages__icon">
+        <svg-icon [src]="advantage.icon"></svg-icon>
+        <div class="advantages__title">
+          {{ advantage.title1 }}
+          <br />
+          {{ advantage.title2 }}
+        </div>
+      </div>
+    </div>
+    <div class="advantages__text">
+      {{ advantage.text }}
+    </div>
+  </div>
+</div>

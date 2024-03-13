@@ -1,0 +1,51 @@
+@import "../../styles/global";
+.reviews {
+  text-align: center;
+  &__text {
+    max-width: 370px;
+    margin-inline: auto;
+  }
+  &__items {
+    @include flex-center-horiz;
+    overflow: hidden;
+  }
+  &__review {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    @include flex-center-column;
+    color: var(--dark-text);
+  }
+  .p-secondary {
+    color: var(--dark-text);
+    font-weight: 600;
+  }
+  &__rating {
+    width: 30%;
+    padding: 1rem;
+  }
+  &__name {
+    font-size: 18px;
+    font-weight: 600;
+    padding-top: 1rem;
+  }
+  &__via {
+    color: var(--main-text);
+    font-weight: 500;
+    font-size: 16px;
+  }
+  &__arrows {
+    display: flex;
+    width: 30%;
+    margin-inline: auto;
+    justify-content: space-between;
+    margin-block: 5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .reviews {
+    &__text {
+      max-width: 700px;
+    }
+  }
+}

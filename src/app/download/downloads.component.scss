@@ -1,0 +1,105 @@
+@import "../shared/styles/global";
+.downloads {
+  .hero {
+    text-align: center;
+    @include flex-center-horiz;
+    &__terms {
+      max-width: 250px;
+      margin-inline: auto;
+    }
+    &__text {
+    }
+    &__buttons {
+      margin-block: 24px;
+    }
+    &__figures {
+      width: 550px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .hero {
+      text-align: center;
+      @include flex-center-horiz;
+      &__terms {
+        max-width: 350px;
+      }
+      &__figures {
+        width: 750px;
+      }
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .hero {
+      text-align: center;
+      @include flex-center-horiz;
+      &__terms {
+        max-width: 600px;
+      }
+      &__figures {
+        width: 850px;
+      }
+    }
+  }
+  .devices {
+    text-align: center;
+    @include flex-center-column-horiz;
+    &__title {
+      max-width: 280px;
+    }
+    &__list {
+      @include flex-center-horiz;
+      flex-wrap: wrap;
+    }
+    &__device {
+      width: 50%;
+      text-align: center;
+      margin-block: 16px;
+      margin-block: 2rem;
+      @include flex-center-column-horiz;
+    }
+    &__device:nth-child(1),
+    &__device:nth-child(3) {
+      border-right: $border;
+      border-width: 4px;
+    }
+    &__icon {
+      margin-bottom: 1rem;
+    }
+    &__category {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    &__type {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--light-grey-text);
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .devices {
+      &__title {
+        max-width: 700px;
+      }
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .devices {
+      &__list {
+        flex-wrap: nowrap;
+      }
+      &__device {
+        padding-inline: 2rem;
+
+        width: 20%;
+      }
+      &__device:not(:last-child) {
+        border-right: $border;
+        border-width: 4px;
+      }
+    }
+  }
+  .reviews {
+    @include flex-center-column-horiz;
+  }
+}

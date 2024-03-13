@@ -1,0 +1,89 @@
+<main class="pricing">
+  <section class="header">
+    <h1 class="main-typo">
+      <span> Choose the plan </span>
+    </h1>
+    <p>Pay by month or the year, and cancel at any time.</p>
+  </section>
+  <section class="plans center">
+    <div class="plans__list">
+      <div
+        class="plans__plan card card-primary"
+        *ngFor="let plan of plans; let i = index"
+      >
+        <div class="plans__header">
+          <div *ngIf="i == 1" class="plans__tag">MOST POPULAR</div>
+          <div class="plans__name">{{ plan.name }}</div>
+          <div *ngIf="i == 2" class="plans__icon">
+            <img src="assets/images/box.png" alt="" />
+          </div>
+          <div class="plans__cost" *ngIf="i != 2">
+            <sup>$</sup><span>{{ plan?.cost }}</span
+            ><sub>/month</sub>
+          </div>
+        </div>
+        <div class="plans__body">
+          <div class="plans__description">
+            <p>{{ plan.descripton }}</p>
+          </div>
+          <div class="plans__buttons">
+            <app-button
+              [title]="i == 2 ? 'Contact Sale' : 'Start free trial'"
+              [icon]="i == 2 ? 'assets/icons/play.svg' : ''"
+              [className]="i == 2 ? 'btn-secondary' : 'btn-primary'"
+            ></app-button>
+          </div>
+        </div>
+        <div class="plans__footer">
+          <div class="plans__show" (click)="toggle(i)">
+            <span>See features</span>
+            <span><svg-icon src="assets/icons/show.svg"></svg-icon></span>
+          </div>
+          <ul class="plans__features" [class]="plan.active ? 'show' : 'hide'">
+            <li class="plans__feature" *ngFor="let feature of plan.features">
+              <svg-icon src="assets/icons/check.svg"></svg-icon>
+              <p>{{ feature }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="faq center">
+    <div class="card card-dark">
+      <div class="faq__background"></div>
+      <div class="faq__header">
+        <h2 class="main-typo light-text">
+          <span> Frequently asked questions </span>
+        </h2>
+      </div>
+      <div class="faq__list">
+        <div class="faq__item" *ngFor="let faq of faqs; let i = index">
+          <div class="faq__category">
+            {{ faq.category }}
+          </div>
+          <div
+            class="faq__element"
+            *ngFor="let question of faq.questions; let j = index"
+          >
+            <div
+              class="faq__question"
+              (click)="toggleFAQ(i.toString() + j.toString())"
+            >
+              <span>
+                {{ question.question }}
+              </span>
+              <span><svg-icon src="assets/icons/show.svg"></svg-icon></span>
+            </div>
+            <div [id]="i.toString() + j.toString()" class="faq__answer">
+              {{
+                question?.answer ||
+                  "4,730 curated design resources to energize your creative workflow. We're a growing family of 382,081 designers and makers from around the world. 4,730 curated design resources to energize your creative workflow."
+              }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

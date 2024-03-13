@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@import "/src/app/shared/styles/normalize";
+@import "/src/app/shared/styles/global";
+@import "/src/app/shared/styles/colors";
+
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+html {
+  background-color: var(--background-color);
+  color: var(--primary-text);
+}
+button,
+input,
+textarea,
+select {
+  font-family: "Inter", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+li {
+  list-style: none;
+}
+div {
+  // overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  /*   display: none;
+ */
+}
+section {
+  margin-block: 2rem;
+}

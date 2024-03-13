@@ -1,0 +1,49 @@
+@import "./../../styles/colors";
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 7.5rem;
+  height: 3.5rem;
+  padding: 0 1.5rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+.btn-primary {
+  background: var(--primary);
+  color: var(--light-text);
+}
+.btn-primary:hover {
+  background-color: var(--effect-orange);
+}
+
+.btn-secondary {
+  border: 3px solid var(--main-text);
+  svg-icon {
+    padding-inline: 0.5rem;
+  }
+}
+
+.btn-secondary:hover {
+  background: var(--effect-dark);
+  border: 3px solid var(--effect-dark);
+  color: var(--light-text);
+  svg-icon {
+    svg {
+      path {
+        fill: var(--light);
+      }
+    }
+  }
+}
+.btn-tertiary {
+  color: var(--light-text);
+  border: 3px solid var(--light-text);
+  background-color: transparent;
+}
+.btn-tertiary:hover {
+  color: var(--dark-text);
+  border: none;
+  background-color: var(--light-text);
+}

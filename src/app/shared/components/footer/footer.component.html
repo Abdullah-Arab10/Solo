@@ -1,0 +1,40 @@
+<div class="footer center">
+  <section class="footer__body">
+    <div class="footer__logo">
+      <img [src]="logo" id="logo-dark" alt="" />
+      <div class="footer__text">
+        Join millions of people who organize work and life with Solo App.
+      </div>
+    </div>
+    <div class="footer__line">
+      <div class="footer__stores">
+        <a href=""
+          ><img src="assets/icons/google-play.svg" id="google-play" alt=""
+        /></a>
+        <a> <img src="assets/icons/app-store.svg" id="apple-store" alt="" /></a>
+      </div>
+      <div class="footer__navigation">
+        <ul class="footer__items">
+          <li *ngFor="let item of footerNavItems">
+            <a
+              class="footer__item"
+              [routerLink]="item.link"
+              routerLinkActive="active-link"
+              >{{ item.title }}</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="footer__bottom">
+    <div class="footer__rights">© Solo Inc. Designed by UI8 Team</div>
+    <div class="footer__social">
+      <img src="assets/icons/facebook.svg" alt="" />
+      <img src="assets/icons/twitter.svg" alt="" />
+
+      <img src="assets/icons/instagram.svg" alt="" />
+    </div>
+  </section>
+  <button (click)="themeToggle()">theme</button>
+</div>

@@ -1,0 +1,80 @@
+@keyframes fade {
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes up-down {
+  to {
+    transform: translateY(-3rem);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  #hero-title {
+    span {
+      transform: translate(0, 50px);
+      opacity: 0;
+      animation: fade 0.7s ease forwards;
+      z-index: 1;
+    }
+    :nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    :nth-child(3) {
+      animation-delay: 0.3s;
+    }
+  }
+  #statis-title {
+  }
+  .active {
+    span,
+    #mobile,
+    #f1-cube,
+    #f1-ball,
+    #f2-triangle,
+    #f2-cube,
+    #cloud,
+    #prod-main,
+    .integrations__integration {
+      transform: translate(0, 50px);
+      opacity: 0;
+      animation: fade 1s ease forwards;
+    }
+    #bike {
+      transform: translate(-25%, 25%);
+      opacity: 1;
+    }
+  }
+  #messege-23,
+  #messege-24,
+  #h-msg-23,
+  #h-msg-33,
+  #msg43,
+  #msg42,
+  #msg72 {
+    animation: up-down 4s linear infinite alternate;
+  }
+  #messege-24,
+  #f1-cube,
+  #h-msg-33,
+  #integ-2,
+  #integ-4,
+  #integ-7,
+  #msg43 {
+    animation-delay: 1s;
+  }
+  #integ-5 {
+    animation-delay: 1.5s;
+  }
+  #f1-cube,
+  #f1-ball {
+    animation-duration: 3s;
+  }
+  @media screen and (min-width: 768px) {
+    .active {
+      #bike {
+        transform: translate(-50%, 50%);
+      }
+    }
+  }
+}
