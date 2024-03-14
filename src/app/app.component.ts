@@ -1,9 +1,11 @@
+import { APP_BASE_HREF } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
 })
 export class AppComponent implements OnInit {
   title = 'Solo-Landing';
