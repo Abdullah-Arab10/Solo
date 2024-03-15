@@ -1,16 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Comments, Faqs, Features } from './features.data';
+import { IntersectionObserverService } from '../shared/services/intersection-observer.service';
 
 @Component({
   selector: 'app-features',
   templateUrl: './features.component.html',
   styleUrls: ['./features.component.scss'],
 })
-export class FeaturesComponent {
+export class FeaturesComponent implements OnInit {
   activeComment = 0;
   comments = Comments;
   faqs = Faqs;
   features = Features;
+  constructor(
+    private _intersectionObserveService: IntersectionObserverService
+  ) {}
+  ngOnInit(): void {
+    this._intersectionObserveService.intersectionObserver();
+  }
   moveComment(step: number) {
     if (step == 1) {
       if (this.activeComment == this.comments.length - 1)

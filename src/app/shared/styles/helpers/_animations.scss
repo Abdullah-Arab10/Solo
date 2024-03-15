@@ -1,5 +1,12 @@
 @keyframes fade {
-  to {
+  /*  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  } */
+  80% {
+    opacity: 0.8;
+  }
+  100% {
     opacity: 1;
     transform: translate(0, 0);
   }
@@ -9,24 +16,28 @@
     transform: translateY(-3rem);
   }
 }
+
 @media (prefers-reduced-motion: no-preference) {
   #hero-title {
     span {
-      transform: translate(0, 50px);
+      transform: translate(0, 100px);
       opacity: 0;
       animation: fade 0.7s ease forwards;
+      -webkit-animation: fade 0.7s ease forwards;
       z-index: 1;
     }
     :nth-child(2) {
       animation-delay: 0.2s;
+      -webkit-animation-delay: 0.2s;
     }
     :nth-child(3) {
       animation-delay: 0.3s;
+      -webkit-animation-delay: 0.3s;
     }
   }
   #statis-title {
   }
-  .active {
+  .active-animation {
     span,
     #mobile,
     #f1-cube,
@@ -39,6 +50,7 @@
       transform: translate(0, 50px);
       opacity: 0;
       animation: fade 1s ease forwards;
+      -webkit-animation: fade 1s ease forwards;
     }
     #bike {
       transform: translate(-25%, 25%);
@@ -53,6 +65,7 @@
   #msg42,
   #msg72 {
     animation: up-down 4s linear infinite alternate;
+    -webkit-animation: up-down 4s linear infinite alternate;
   }
   #messege-24,
   #f1-cube,
@@ -62,13 +75,16 @@
   #integ-7,
   #msg43 {
     animation-delay: 1s;
+    -webkit-animation-delay: 1s;
   }
   #integ-5 {
     animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
   }
   #f1-cube,
   #f1-ball {
     animation-duration: 3s;
+    -webkit-animation-delay: 3s;
   }
   @media screen and (min-width: 768px) {
     .active {

@@ -1,23 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { IntersectionObserverService } from '../shared/services/intersection-observer.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  constructor(
+    private _intersectionObserveService: IntersectionObserverService
+  ) {}
   ngOnInit(): void {
-    document.querySelectorAll('.reveal').forEach((section) => {
-      this.observer.observe(section);
-    });
+    this._intersectionObserveService.intersectionObserver();
   }
-  observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      const id = entry.target.id;
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      } else {
-        entry.target.classList.remove('active');
-      }
-    });
-  });
 }
