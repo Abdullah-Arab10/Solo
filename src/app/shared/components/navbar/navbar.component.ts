@@ -18,7 +18,6 @@ export class NavbarComponent {
 
   toggleMenu() {
     let item = document.querySelector('.navbar__items')?.classList;
-    console.log(item, item?.contains('hide'));
     item?.toggle('hide');
   }
 }

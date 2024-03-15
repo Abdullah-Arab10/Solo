@@ -117,7 +117,7 @@
       height: 100%;
       z-index: -1;
       overflow: hidden;
-      background: #2c353d;
+      background: var(--card-background);
       border-radius: 24px;
       &::before {
         top: -280px;
@@ -207,19 +207,11 @@
   .comments {
     @include flex-center-column-horiz;
     text-align: center;
-    &__title {
-    }
-    &__items {
-    }
-    &__item {
-      /*      transform: translate3d(100px, 0, 0);
-      transition: all 2s ease; */
-    }
     &__show {
       transform: translate3d(0, 0, 0);
     }
     &__card {
-      background-color: var(--white);
+      background-color: var(--card-background);
       padding: 40px;
       position: relative;
       overflow: visible;
@@ -227,7 +219,7 @@
         content: "";
         width: 48px;
         height: 48px;
-        background-color: var(--white);
+        background-color: var(--card-background);
         position: absolute;
         bottom: -10%;
         right: 45%;

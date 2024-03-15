@@ -2,6 +2,9 @@
 @import "../shared/styles/helpers/animations";
 
 .about {
+  path {
+    stroke: var(--primary-text);
+  }
   .hero {
     text-align: center;
     &__header {
@@ -26,10 +29,6 @@
   .who {
     @include flex-center-column-horiz;
     text-align: center;
-    &__header {
-    }
-    &__items {
-    }
     &__item {
       max-width: 160px;
       margin-block: 2rem;
@@ -46,8 +45,6 @@
     .who {
       @include flex-center-column-horiz;
       text-align: center;
-      &__header {
-      }
       &__items {
         display: flex;
         padding-bottom: 2rem;
@@ -57,11 +54,6 @@
       }
       &__item {
         margin-inline: 3rem;
-      }
-      &__icon {
-      }
-
-      &__description {
       }
     }
   }

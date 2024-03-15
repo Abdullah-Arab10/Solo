@@ -16,10 +16,6 @@
     @include flex-center-column;
     color: var(--dark-text);
   }
-  .p-secondary {
-    color: var(--dark-text);
-    font-weight: 600;
-  }
   &__rating {
     width: 30%;
     padding: 1rem;
@@ -28,6 +24,7 @@
     font-size: 18px;
     font-weight: 600;
     padding-top: 1rem;
+    color: var(--primary-text);
   }
   &__via {
     color: var(--main-text);
@@ -40,6 +37,12 @@
     margin-inline: auto;
     justify-content: space-between;
     margin-block: 5rem;
+  }
+  button {
+    background-color: transparent;
+  }
+  path {
+    stroke: var(--primary-text);
   }
 }
 @media screen and (min-width: 768px) {

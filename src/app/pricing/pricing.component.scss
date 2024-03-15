@@ -77,6 +77,14 @@ p {
       cursor: pointer;
       margin-block: 2rem;
       font-weight: 600;
+      @include flex-between;
+      align-items: center;
+      svg {
+        width: 12px;
+        path {
+          stroke: var(--primary-text);
+        }
+      }
     }
     &__features {
       padding-inline: 0;
