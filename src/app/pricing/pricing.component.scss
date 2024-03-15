@@ -89,6 +89,8 @@ p {
     &__features {
       padding-inline: 0;
       transition: transform 2s ease 1s, max-height 2s ease;
+      -webkit-transition: transform 2s ease 1s, max-height 2s ease;
+
       overflow: hidden;
     }
     &__features.show {
@@ -194,9 +196,10 @@ p {
       height: 0;
       overflow: hidden;
       transition: height 2s ease;
+      -webkit-transition: height 2s ease;
     }
     &__answer.active {
-      height: 150px;
+      height: 180px;
     }
     &__background {
       position: absolute;

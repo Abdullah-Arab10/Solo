@@ -17,6 +17,7 @@ export class NavbarComponent {
   constructor() {}
 
   toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
     let item = document.querySelector('.navbar__items')?.classList;
     item?.toggle('hide');
   }

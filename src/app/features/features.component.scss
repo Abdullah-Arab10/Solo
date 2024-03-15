@@ -304,21 +304,20 @@
     }
     &__answer {
       max-height: 0;
-      transition: max-height 0.7s ease;
+      transition: max-height 1.5s ease;
+      -webkit-transition: max-height 1.5s ease;
     }
   }
   .active {
-    background-color: var(--white);
+    background-color: var(--card-background);
     border-radius: 24px;
 
     .faqs {
       &__question {
-        color: unset;
+        color: var(--primary-text);
       }
       &__answer {
         max-height: 250px;
-      }
-      &__faq {
       }
     }
   }
