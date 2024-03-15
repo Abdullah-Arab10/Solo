@@ -63,6 +63,9 @@
     }
     &__icon {
       margin-bottom: 1rem;
+      path {
+        fill: var(--primary-text);
+      }
     }
     &__category {
       font-size: 18px;
